@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from "react-dom";
+import {RPSApp} from "./RPSApp";
+import {rps} from '../../rps';
 
 const domFixture = document.createElement('div');
 domFixture.id = 'reactApp';
@@ -7,6 +9,6 @@ document.querySelector('body').appendChild(domFixture);
 
 
 ReactDOM.render(
-    <h1>Hello, world!</h1>,
+    <RPSApp requests={new rps()}/>,
   domFixture
 );
