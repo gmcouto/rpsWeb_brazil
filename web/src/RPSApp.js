@@ -54,25 +54,25 @@ export class RPSApp extends React.Component {
   render() {
     return (
       <div>
+        <p className='result'>{this.state.result}</p>
         <section>
-          <select value={this.state.player1Throw}
-                  onChange={(e) => this.setState({player1Throw: e.target.value})}>
-            <option value="rock">Rock</option>
-            <option value="paper">Papers</option>
-            <option value="scissors">Scissors</option>
-          </select>
+          <input type="text" className='player1Throw'
+                 value={this.state.player1Throw}
+                 onChange={event => {
+                   this.setState({player1Throw: event.target.value})
+                 }}
+          />
 
-          <select value={this.state.player2Throw}
-                  onChange={(e) => this.setState({player2Throw: e.target.value})}>
-            <option value="rock">Rock</option>
-            <option value="paper">Papers</option>
-            <option value="scissors">Scissors</option>
-          </select>
+          <input type="text" className='player2Throw'
+                 value={this.state.player2Throw}
+                 onChange={event => {
+                   console.log(event)
+                   this.setState({player2Throw: event.target.value})
+                 }}
+          />
         </section>
-
-        <div>{this.state.result}</div>
         <button
-          onClick={() => this.props.requests.play(this.state.player1Throw, this.state.player2Throw, this.observer())}>Click
+          onClick={() => this.props.requests.play(this.state.player1Throw, this.state.player2Throw, this.observer())}>Play
         </button>
       </div>
     );
