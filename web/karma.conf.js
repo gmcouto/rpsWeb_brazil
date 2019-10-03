@@ -11,8 +11,13 @@ module.exports = function (config) {
     ],
     preprocessors: {
       'spec/tests.webpack.js': ['webpack', 'sourcemap'], //preprocess with webpack and our sourcemap loader
+      // 'spec/*.jsx': ['coverage']
     },
     reporters: ['nyan'], //report results in this format
+    // coverageReporter: {
+    //   type : 'lcov',
+    //   dir : 'coverage/'
+    // },
     mochaReporter: {
       output: 'autowatch'
     },

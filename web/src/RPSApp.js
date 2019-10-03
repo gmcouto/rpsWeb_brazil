@@ -56,6 +56,7 @@ export class RPSApp extends React.Component {
       <div>
         <p className='result'>{this.state.result}</p>
         <section>
+
           <input type="text" className='player1Throw'
                  value={this.state.player1Throw}
                  onChange={event => {

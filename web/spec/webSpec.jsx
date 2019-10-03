@@ -14,8 +14,13 @@ function sleep(ms) {
 }
 
 function buildPage() {
+  if (document.getElementById('divId')) {
+    document.getElementById('divId').remove();
+  }
+
   let page = document.createElement('div');
   page.id = 'divId';
+
   document.querySelector('body').appendChild(page);
 
   return page;
